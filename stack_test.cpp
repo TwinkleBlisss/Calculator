@@ -4,6 +4,7 @@
 #define _CRT_SECURE_NO_WARNINGS
 
 int main() {
+    cout << "hello world";
     int n = 3;
     Stack* s = createStack();
     double a;
