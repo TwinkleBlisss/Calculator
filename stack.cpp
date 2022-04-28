@@ -45,17 +45,16 @@ void push(Stack* stack, double value) {
     stack->top++;
 }
 
-double pop(Stack* stack) {
-    // Âîçâðàùàåò ýëåìåíò ñ âåðøèíû è ïåðåõîäèò ê ñëåäóþùåìó.
+void pop(Stack* stack) {
+    // Ð£Ð´Ð°Ð»ÑÐµÑ‚ Ð²ÐµÑ€Ñ…Ð½Ð¸Ð¹ ÑÐ»ÐµÐ¼ÐµÐ½Ñ‚.
     if (stack->top == 0) {
         exit(STACK_UNDERFLOW);
     }
     stack->top--;
-    return stack->data[stack->top];
 }
 
 double head(const Stack* stack) {
-    // Âîçâðàùàåò ýëåìåíò ñ âåðøèíû.
+    // Ð’Ð¾Ð·Ð²Ñ€Ð°Ñ‰Ð°ÐµÑ‚ Ð²ÐµÑ€Ñ…Ð½Ð¸Ð¹ ÑÐ»ÐµÐ¼ÐµÐ½Ñ‚.
     if (stack->top <= 0) {
         exit(STACK_UNDERFLOW);
     }
@@ -63,7 +62,7 @@ double head(const Stack* stack) {
 }
 
 void cut(Stack* stack) {
-    // Ñîêðàùàåò ìàêñèìàëüíûé ðàçìåð ìàññèâà äî ôàêòè÷åñêîãî.
+    // Ð¡Ð¾ÐºÑ€Ð°Ñ‰Ð°ÐµÑ‚ Ð¼Ð°ÐºÑÐ¸Ð¼Ð°Ð»ÑŒÐ½Ñ‹Ð¹ Ñ€Ð°Ð·Ð¼ÐµÑ€ Ð¼Ð°ÑÑÐ¸Ð²Ð° Ð´Ð¾ Ñ„Ð°ÐºÑ‚Ð¸Ñ‡ÐµÑÐºÐ¾Ð³Ð¾.
     stack->size = stack->top;
     stack->data = (double*)realloc(stack->data, stack->size * sizeof(double));
 }
